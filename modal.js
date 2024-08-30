@@ -138,7 +138,7 @@ function onFormSubmit(event) {
     quantityError.innerHTML = "Vous devez entrer un nombre de tournois.";
     formHasError = true;      
   }
-  else if(!(parseInt(quantity.value) != NaN)){
+  else if(isNaN(parseInt(quantity.value))){
     quantity.classList.add('invalid');
     let quantityError = document.getElementById('quantity-error');
     quantityError.innerHTML = "Veuillez entrer un nombre.";
