@@ -136,8 +136,15 @@ function onFormSubmit(event) {
     quantity.classList.add('invalid');
     let quantityError = document.getElementById('quantity-error');
     quantityError.innerHTML = "Vous devez entrer un nombre de tournois.";
-    formHasError = true;
-  } else {
+    formHasError = true;      
+  }
+  else if(!(parseInt(quantity.value) != NaN)){
+    quantity.classList.add('invalid');
+    let quantityError = document.getElementById('quantity-error');
+    quantityError.innerHTML = "Veuillez entrer un nombre.";
+    formHasError = true;      
+  } 
+  else {
     quantity.classList.remove('invalid');
     document.getElementById('quantity-error').innerHTML = "";
   }
